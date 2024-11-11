@@ -23,9 +23,9 @@ class OpenRGBNvim(object):
         self.mode_dict = self.vim.vars['openrgb_mode_dict']
 
     def vim_color_to_rgb(self, vim_color):
-        r = eval("0x" + vim_color[1:3])
-        g = eval("0x" + vim_color[3:5])
-        b = eval("0x" + vim_color[5:7])
+        r = int(vim_color[1:3], 16)
+        g = int(vim_color[3:5], 16)
+        b = int(vim_color[5:7], 16)
         return (r, g, b)
 
     def vim_color_to_rgb_color(self, vim_color, brightness=False):
